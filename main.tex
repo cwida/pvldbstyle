@@ -1,4 +1,5 @@
-% VLDB template version of 2020-03-05 enhances the ACM template, version 1.7.0:
+
+% VLDB template version of 2020-08-03 enhances the ACM template, version 1.7.0:
 % https://www.acm.org/publications/proceedings-template
 % The ACM Latex guide provides further information about the ACM template
 
@@ -15,6 +16,10 @@
 % should be fine as it is
 \newcommand\vldbauthors{\authors}
 \newcommand\vldbtitle{\shorttitle} 
+% leave empty if no availability url should be set
+\newcommand\vldbavailabilityurl{URL_TO_YOUR_ARTIFACTS}
+% whether page numbers should be shown or not, use 'plain' for review versions, 'empty' for camera ready
+\newcommand\vldbpagestyle{plain} 
 
 \begin{document}
 \title{A Relational Model of Data for Large Shared Data Banks}
@@ -91,9 +96,9 @@ Praesent imperdiet, lacus nec varius placerat, est ex eleifend justo, a vulputat
 
 \maketitle
 
-
 %%% do not modify the following VLDB block %%
 %%% VLDB block start %%%
+\pagestyle{\vldbpagestyle}
 \begingroup\small\noindent\raggedright\textbf{PVLDB Reference Format:}\\
 \vldbauthors. \vldbtitle. PVLDB, \vldbvolume(\vldbissue): \vldbpages, \vldbyear.\\
 \href{https://doi.org/\vldbdoi}{doi:\vldbdoi}
@@ -107,12 +112,21 @@ ISSN 2150-8097. \\
 }\addtocounter{footnote}{-1}\endgroup
 %%% VLDB block end %%%
 
+%%% do not modify the following VLDB block %%
+%%% VLDB block start %%%
+\ifdefempty{\vldbavailabilityurl}{}{
+\vspace{.3cm}
+\begingroup\small\noindent\raggedright\textbf{PVLDB Artifact Availability:}\\
+The source code, data, and/or other artifacts have been made available at \url{\vldbavailabilityurl}.
+\endgroup
+}
+%%% VLDB block end %%%
 
 \section{Introduction}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a arcu quis arcu malesuada ultricies vitae in felis. Curabitur porta lacus at felis viverra hendrerit in non eros. Nam tempus tincidunt metus vitae fermentum. Donec sed risus felis. Cras luctus massa elementum, semper urna vel, efficitur ipsum. Morbi at tellus libero.
 
-Praesent imperdiet, lacus nec varius placerat, est ex eleifend justo, a vulputate leo massa consectetur nunc. Donec posuere in mi ut tempus. Pellentesque sem odio, faucibus non mi in, laoreet maximus arcu. In hac habitasse platea dictumst. Nunc euismod neque eu urna accumsan, vitae vehicula metus tincidunt. Maecenas congue tortor nec varius pellentesque. Pellentesque bibendum libero ac dignissim euismod. Aliquam justo ante, pretium vel mollis sed, consectetur accumsan nibh. Nulla sit amet sollicitudin est. Etiam ullamcorper diam a sapien lacinia faucibus. Duis vulputate, nisl nec tincidunt volutpat, erat orci eleifend diam, eget semper risus est eget nisl. Donec non odio id neque pharetra ultrices sit amet id purus. Nulla non dictum tellus, id ullamcorper libero. 
+Praesent imperdiet, lacus nec varius placerat, est ex eleifend justo, a vulputate leo massa consectetur nunc. Donec posuere in mi ut tempus. Pellentesque sem odio, faucibus non mi in, laoreet maximus arcu. In hac habitasse platea dictumst. Nunc euismod neque eu urna accumsan, vitae vehicula metus tincidunt. Maecenas congue tortor nec varius pellentesque. Pellentesque bibendum libero ac dignissim euismod. Aliquam justo ante, pretium vel mollis sed, consectetur accumsan nibh. Nulla sit amet sollicitudin est. 
 
 \section{Core Structural Elements}
 
